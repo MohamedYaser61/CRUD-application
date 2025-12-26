@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="productInfo w-75 mx-auto my-5 bg-info p-4 rounded">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" class="form-control mb-3">
+        <div id="nameError" class="alert alert-danger d-none">Invalid product name</div>
+
+        <label for="productPrice">Product Price:</label>
+        <input type="number" id="productPrice" class="form-control mb-3">
+        <div id="numberError" class="alert alert-danger d-none">Invalid  Price</div>
+
+        <label for="productCategory">Product Category:</label>
+        <input type="text" id="productCategory" class="form-control mb-3">
+        <div id="categoryError" class="alert alert-danger d-none">Invalid  Categorry</div>
+
+        <label for="productDescription">Product Description:</label>
+        <textarea id="productDescription" class="form-control mb-3"></textarea>
+        <div id="descriptionError" class="alert alert-danger d-none">Invalid  Description</div>
+
+        <button id="addBtn" disabled class="btn btn-warning btn-primary float-end">Add Product</button>
+        <div class="clearfix"></div>
+    </div>
+
+    <!-- Search Input -->
+    <div class="searchInput w-75 mx-auto">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search by product name...">
+    </div>
+
+    <!-- Products Table -->
+    <table class="table text-center my-3">
+        <thead>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Product Category</th>
+            <th>Product Description</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </thead>
+        <tbody id="tbody">
+            <!-- Products will be added here -->
+        </tbody>
+    </table>
+
+
+
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/all.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>
