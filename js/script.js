@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 (() => {
     const STORAGE_KEY = "products";
     const state = {
