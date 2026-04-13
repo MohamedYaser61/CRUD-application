@@ -1,53 +1,46 @@
-# Deploying ProductHub to Vercel
+# Deploying ProductHub to GitHub Pages
 
-This guide explains how to deploy the ProductHub CRUD application to Vercel.
+This guide explains how to deploy the ProductHub CRUD application to GitHub Pages.
 
 ## Prerequisites
 
-- A Vercel account (sign up at [vercel.com](https://vercel.com))
+- A GitHub account
 - Git repository (already initialized in this project)
+- Your repository pushed to GitHub
 
 ## Deployment Steps
 
-### Option 1: Deploy via Vercel CLI
+### 1. Push Your Code to GitHub
 
-1. **Install Vercel CLI** (if not already installed):
-   ```bash
-   npm install -g vercel
-   ```
+```bash
+git add .
+git commit -m "Prepare for GitHub Pages deployment"
+git push origin main
+```
 
-2. **Deploy from the project root**:
-   ```bash
-   vercel
-   ```
+### 2. Enable GitHub Pages
 
-3. Follow the prompts to link your Vercel account and configure the project.
+1. Go to your repository on GitHub
+2. Click **Settings** → **Pages**
+3. Under "Source", select:
+   - **Branch**: `main`
+   - **Folder**: `/ (root)`
+4. Click **Save**
 
-### Option 2: Deploy via GitHub Integration
+Your site will be published at: `https://YOUR-USERNAME.github.io/CRUD-Part2/`
 
-1. **Push your code to GitHub**:
-   ```bash
-   git add .
-   git commit -m "Prepare for Vercel deployment"
-   git push origin main
-   ```
+### 3. (Optional) Configure a Custom Domain
 
-2. **Connect to Vercel**:
-   - Go to [vercel.com/new](https://vercel.com/new)
-   - Select "Import Git Repository"
-   - Connect your GitHub account and select this repository
-   - Click "Deploy"
-
-3. Vercel will automatically detect it's a static site and deploy it.
+1. In GitHub Pages settings, add your custom domain
+2. Update your domain's DNS records to point to GitHub Pages
+3. GitHub will automatically handle the SSL certificate
 
 ## Project Configuration
 
-The project includes a `vercel.json` configuration file that:
-
-- Enables clean URLs (removes `.html` extensions)
-- Sets up client-side routing to serve `index.html` for all routes
-- Configures cache headers for optimal performance
-- Sets up redirects for common routes
+This is a static site with:
+- No build step required
+- Client-side routing for navigation
+- All data stored in browser's local storage
 
 ## Features
 
@@ -68,15 +61,16 @@ The application includes demo data that resets when you click "Reset Demo Data" 
 
 ## After Deployment
 
-1. Your site will be live at `https://your-project-name.vercel.app`
-2. You can set up a custom domain in Vercel project settings
-3. Future pushes to your repository will trigger automatic redeployments
+1. Your site will be live at `https://YOUR-USERNAME.github.io/CRUD-Part2/`
+2. Future pushes to the `main` branch will automatically redeploy your site
+3. Updates typically go live within a few seconds to minutes
 
 ## Troubleshooting
 
+- **Page not found**: Make sure GitHub Pages is enabled in your repository Settings
 - **Blank page**: Check browser console for errors (F12)
-- **Styling not loading**: Verify CSS files are being served correctly
+- **Styling not loading**: Check that CSS file paths are correct for the GitHub Pages subdirectory
 - **Data resetting**: Check browser's local storage is enabled
-- **Performance**: Vercel provides edge caching for all static assets
+- **Still processing**: GitHub Pages can take a few minutes to deploy for the first time
 
-For more Vercel documentation, visit [vercel.com/docs](https://vercel.com/docs)
+For more GitHub Pages documentation, visit [docs.github.com/en/pages](https://docs.github.com/en/pages)
